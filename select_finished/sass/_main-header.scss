@@ -1,0 +1,228 @@
+/*--------------------------------------------------------------
+# Main header
+--------------------------------------------------------------*/
+.main-header {
+    font-family: $heading_font;
+}
+
+.navbar {
+    background-color: $nintendo_white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+
+    @media screen and (min-width: $breakpoint_tablet){
+        padding: 1em 2em;
+    }
+}
+
+.site-title {
+    font-size: 1.5em;
+    line-height: 1;
+    color: $text_color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+.custom-logo-link {
+    line-height: 0;  
+}
+
+.menu-wrapper {
+    bottom: 0;
+    height: 100vh;
+    max-width: 80vw;
+    opacity: 0;
+    padding: 1em;
+    position: fixed;
+    right: 0px;
+    top:0;
+    transition: all .25s ease-in-out;;
+    visibility: hidden;
+    width: 0px;
+    z-index: 100;
+
+    @media screen and (min-width: $breakpoint_tablet){
+        padding: 1em 2em;
+    }
+}
+
+// Fix menu-wrapper positioning when the admin bar is present.
+.admin-bar .menu-wrapper {
+    top: 46px;
+
+    @media screen and (min-width:783px){
+        top: 32px;
+    }
+
+    .menu-close {
+        margin-top: 22px; 
+    }
+}
+
+.menu-wrapper.open {
+    background: #fff;
+    opacity: 1;
+    visibility: visible;
+    width: 30em;
+}
+
+.menu-button,
+.menu-close {
+    background-color: transparent;
+    border: none;
+    padding: .5em;
+
+    &:hover,
+    &:focus {
+        background-color: transparent;
+    }
+}
+
+.menu-close {
+    display: block;
+    margin-left: auto;
+}
+
+.menu-icon {
+    display: flex;  
+    height: 1em;
+    width: 1em;
+}
+
+div.menu ul,
+ul.menu {
+    font-size: 1.5em;
+    list-style: none;
+    padding-left: 0;
+    text-transform: uppercase;
+}
+
+.sub-menu {
+    font-size: .8em;
+    list-style: none;
+}
+
+.page_item a,
+.menu-item a {
+    color: $text-color;
+    display: inline-block;
+    padding: .25em 0;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: $nintendo_red_lighter;
+        text-decoration: underline;
+    }
+}
+
+
+.title-section {
+    align-items: center;
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 13em;
+    padding: 1em;
+    text-align: center;
+
+    @media screen and (min-width: $breakpoint_laptop){
+        padding: 2em;
+    }
+}
+
+.main-title {
+    margin-bottom: 0;
+}
+
+.main-meta {
+    color: $text_color_lighter;
+    font-size: 1.25em;
+}
+
+@media screen and (min-width: $breakpoint_laptop) {
+    
+    .site-title {
+        font-size: 1.3em;
+    }
+
+    .menu-button,
+    .menu-close {
+        display: none;
+    }
+
+    .menu-wrapper {
+        height: auto;
+        max-width: none;
+        opacity: 1;
+        padding: 0;
+        position: static;
+        visibility: visible;
+        width: auto;
+    }
+
+    div.menu ul,
+    ul.menu {
+        font-size: 1.3em;
+        margin: 0;
+    }
+
+    .page_item,
+    .menu-item {
+        display: inline-block;
+    }
+
+    .page_item a,
+    .menu-item a {
+        position: relative;
+        margin-left: .5em;
+    }
+
+    .menu-item-has-children {
+        position: relative;
+    }
+
+    .sub-menu {        
+        background: #fff;
+        opacity: 0;
+        padding: 1em;
+        position: absolute;
+        transform: scale(.9);
+        transition: all .25s ease-in-out;
+        visibility: hidden;
+        width: max-content;
+        z-index: -100;
+    
+        .menu-item {
+            margin-left: 0;
+            display: block;
+        }
+
+    }
+
+    .menu > .menu-item-has-children:last-of-type .sub-menu {
+        right: 0;
+    }
+
+    .menu-item-has-children:hover .sub-menu,
+    .menu-item-has-children a:hover + .sub-menu,
+    .menu-item-has-children.focus .sub-menu,
+    .sub-menu.open {
+        opacity: 1;
+        transform: scale(1);
+        visibility: visible;
+        z-index: 100;
+    }
+
+
+}
+
+

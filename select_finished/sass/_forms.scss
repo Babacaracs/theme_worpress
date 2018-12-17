@@ -1,0 +1,78 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	border: 3px solid $text_color_lighter;
+	border-radius: 20px;
+	color: $text_color_lighter;
+	line-height: 1;
+	padding: .25em 1em;
+
+	&:focus {
+		border-color: $nintendo_black_lighter;
+		color: $nintendo_black_lighter;
+		outline: none;
+	}
+}
+
+select {
+	border: 3px solid $text_color;
+	border-radius: 20px;
+	min-width: 10em;
+	padding: .25em;
+}
+
+textarea {
+	padding: 1em;
+	width: 100%;
+}
+
+button,
+.button,
+.nav-next a,
+.nav-previous a,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 3px solid;
+	border-color: $nintendo_darkgrey;
+	border-radius: 20px;
+	background-color: $nintendo_red;
+	color: $background_color;
+	font-family: $heading_font;
+	line-height: 1;
+	padding: .5em 1em;
+	text-decoration: none;
+	transition: all .25s ease-in-out;
+
+    &:hover,
+    &:active,
+	&:focus {
+		background-color: $nintendo_red_lighter;
+		border-color: $nintendo_lightgrey;
+	}
+
+}
+
+.big-button,
+input.big-button {
+	padding: 1em 2em;
+}
+
+.search-form label {
+	display: block;
+	margin-bottom: .2em;
+}
+

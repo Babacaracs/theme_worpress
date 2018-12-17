@@ -1,0 +1,65 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 16) {
+	font-size: $sizeValue * 1px;
+	font-size: ($sizeValue / 16) * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+$columns: (
+	1: 100%,
+	2: 50%,
+	3: 33.33%,
+	4: 25%,
+	5: 20%,
+	6: 16.66%,
+	7: 14.28%,
+	8: 12.5%,
+	9: 11.11%
+);
+
+$columns__margin: 3.8%;
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+// Typographic scale
+@mixin bodyscale( $bodyscale ){
+	@include font-size( map-get( $bodyscale, $breakpoint_mobile) );
+    @each $breakpoint, $size in $bodyscale {
+        @media screen and (min-width: $breakpoint) {
+            @include font-size( $size );
+        }
+    }  
+}
+
+@mixin typescale( $typescale ){
+	@each $header, $size in $typescale {
+		#{$header}, .#{$header} {
+			font-size: $size;
+		}
+	}
+}
+
+@mixin box-shadow( $depth: $shadow_depth ){
+	box-shadow: $depth $depth $depth lighten( $color__text-main, 40% );
+}

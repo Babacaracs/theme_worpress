@@ -1,0 +1,97 @@
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	@include center-block;
+	margin-bottom: 1.5em;
+}
+
+.alignfull {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	width: auto;
+	max-width: 1000%;
+}
+
+.alignwide {
+	margin-left: calc(25% - 25vw);
+	margin-right: calc(25% - 25vw);
+	width: auto;
+	max-width: 1000%;
+}
+
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+
+	// Loops to enumerate the classes for gallery columns.
+	@for $i from 2 through 9 {
+		.gallery-columns-#{$i} & {
+			min-width: map-get( $columns, $i );
+		}
+	}
+}
+
+.gallery-caption {
+	display: block;
+}
+
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+
+	img[class*="wp-image-"] {
+		@include center-block;
+	}
+
+	.wp-caption-text {
+		margin: .3em 0 1.5em;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.wp-caption-text {
+	font-size: .8em;
+	text-align: center;
+}

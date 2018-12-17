@@ -1,0 +1,14 @@
+/*--------------------------------------------------------------
+# Main Footer
+--------------------------------------------------------------*/
+.main-footer {
+    background-color: $nintendo_white;
+    font-family: $bit-font;    
+    font-size: .6em;
+    padding: 1em;
+    text-align: center;
+
+    @media screen and (min-width: $breakpoint_tablet){
+        padding: 2em;
+    }
+}

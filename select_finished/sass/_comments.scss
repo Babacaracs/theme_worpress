@@ -1,0 +1,48 @@
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+.commentlist {
+    list-style: none;
+}
+
+.comment-author {
+    align-items: center;
+    display: flex;
+
+    .avatar {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+.says {
+    margin-left: 5px;
+}
+
+.comment-meta {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+comment-metadata {
+    font-size: .8em;
+}
+
+.comment-edit-link {
+    margin-left: 5px;
+}
+
+.reply {
+    text-align: right;
+}
+
+.comment-notes {
+    font-size: .8em;
+}
+
+.comment-form label{
+    display: block;
+    margin-bottom: .2em;
+}

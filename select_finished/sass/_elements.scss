@@ -1,0 +1,94 @@
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: $background_color; /* Fallback for when there is no custom background color defined. */
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: 1.5em 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+ul, ol {
+	margin-bottom: 1.5em;
+}
+
+ul {
+	list-style: square;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+}
+
+table {
+    margin: 0 0 1.5em;
+    width: 100%;
+}
+
+thead,
+tfoot {
+	background-color: $nintendo_darkgrey;
+	color: $background_color;
+}
+
+tr:nth-of-type(2n){
+	background-color: $nintendo_lightgrey;
+}
+
+th,
+td {
+	padding: 5px;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+a {
+	color: $nintendo_red;
+	transition: all .25s;
+
+    &:hover,
+    &:focus {
+		color: $nintendo_red_lighter;
+    }
+}
+
+blockquote {
+	font-family: $bit_font;
+	font-size: 0.6em;
+	margin: 0;
+	padding: 2em;
+
+	cite {
+		display: block;
+		text-align: right;
+	}
+}

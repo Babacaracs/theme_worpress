@@ -1,0 +1,53 @@
+/*
+ * style.css
+ * 
+ * C'est ce fichier qui va (probablement) contenir les styles de notre thème.
+ * Il fait partie (avec index.php) des deux fichiers obligatoires pour que le thème soit reconnu dansl'administration de WordPress
+ * C'est le commentaire ci-dessous que WordPress lit pour pouvoir afficher correctement les informations dans Apparence > Thèmes.
+ * Seul 'Theme Name' est obligatoire. Les autres sont recommandés. 
+ * La liste complète es informations que l'on peut inclure dans cette entête peut être trouvée sur https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/
+ * 
+ * Notez qu'il ne suffit pas d'avoir des styles dans ce fichier pour qu'ils s'appliquent automatiquement. Il faut charger ce fichier au bon moment.
+ */
+
+/*
+Theme Name: Select Finished
+Author: vincentdubroeucq    
+Author URI: https://vincentdubroeucq.com
+Description: A cool and simple theme for your WordPress blog.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: select
+Domain Path: /languages
+Tags: 
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Accessibility
+# Media
+# Main header
+# Main content
+# Main footer
+# Comments
+# Widgets
+--------------------------------------------------------------*/
+@import "variables";
+@import "mixins";
+@import "normalize";
+@import "typography";
+@import "elements";
+@import "forms";
+@import "accessibility";
+@import "media";
+@import "main-header";
+@import "main-content";
+@import "main-footer";
+@import "comments";
+@import "widgets";
